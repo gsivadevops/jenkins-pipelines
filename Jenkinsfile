@@ -1,13 +1,13 @@
 pipeline {
   agent {
-    label 'AGENT-1'
+      label 'AGENT-1'
   }
   environment {
-    COURSE = 'Jenkins'
+      COURSE = 'Jenkins'
   }
   options {
-    timeout(time: 30, unit: 'MINUTES')
-    disableConcurrentBuilds()
+      timeout(time: 30, unit: 'MINUTES')
+      disableConcurrentBuilds()
   }
   parameters {
       string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')

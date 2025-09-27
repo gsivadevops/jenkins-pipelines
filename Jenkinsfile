@@ -24,7 +24,7 @@ pipeline {
               echo 'Hello Build'
               sleep 10
               env
-              echo "Hello ${PERSON}
+              echo "Hello ${PERSON}"
             """
           }
         }

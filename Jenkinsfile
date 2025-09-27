@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+    label 'AGENT-1'
+  }
   stages {
       stage('Build') {
         steps {
@@ -16,6 +18,18 @@ pipeline {
           echo 'Deploying'
         }
       }
+  }
+  post {
+    always {
+      echo 'I will always say Hello Again!'
+      deleteDir()
+    }
+    success {
+      echo 'Hello Success'
+    }
+    failure {
+      echo 'Hello Failure'
+    }
   }
 }
 
